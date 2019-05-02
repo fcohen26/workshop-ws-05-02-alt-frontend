@@ -1,3 +1,21 @@
+<template>
+  <div  class="ToDoItem">
+<p class="ToDoItem-Text" v-html="todo.text"></p>
+    <div class="ToDoItem-Delete" @click="deleteItem(todo)">-
+	</div>
+  </div>
+</template>
+<script>
+  export  default  {
+      methods: {
+  deleteItem(todo) {
+    this.$emit('delete', todo)
+  }
+},
+  name: "to-do-item",
+    props: ['todo'],
+  }
+</script>
 <style>
     .ToDoItem {
         display: flex;
